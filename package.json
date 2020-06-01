@@ -1,0 +1,15 @@
+{
+  "name": "deneme3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "jshint.options": {"esversion": 6 },
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^9.0.0"
+  }
+}
