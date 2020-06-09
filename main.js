@@ -7,12 +7,13 @@ var app = require('electron').app;
 var BrowserWindow = require('electron').BrowserWindow;
 
 var os = require('os');
+var request = require('request');
 
 var { dialog } = require('electron');
 
 var mainWindow = null;
 var ipc = require('electron').ipcMain;
-
+let {PythonShell} = require('python-shell');
 
 ipc.on('close-main-window', function () {
 	app.quit();
@@ -48,7 +49,16 @@ app.on('ready', function () {
 		dialog.showOpenDialog({
 			properties: ['openFile']
 		}).then((data) => {
-			console.log(data.filePaths);
+			var fpath = data.filePaths;
+			console.log(fpath);
+			var options = {
+				scriptPath : path.join(__dirname, '/engine/'),
+				args : [fpath]
+			  };
+
+			  let pyshell = new PythonShell('img_to_dxf.py', options);
+
+
 		});
 
 

@@ -7,9 +7,15 @@
     "start": "electron ."
   },
   "author": "",
-  "jshint.options": {"esversion": 6 },
+  "jshint.options": {
+    "esversion": 6
+  },
   "license": "ISC",
   "dependencies": {
-    "electron": "^9.0.0"
+    "-": "0.0.1",
+    "electron": "^9.0.2",
+    "electron-prebuilt": "^1.4.13",
+    "python-shell": "^2.0.1",
+    "request": "^2.88.2"
   }
 }
